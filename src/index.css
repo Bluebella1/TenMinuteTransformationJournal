@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap');
+
+/* Clean mobile-optimized styling */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(150, 8%, 97%);
+  --foreground: hsl(149, 25%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(149, 25%, 15%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(149, 25%, 15%);
+  --primary: hsl(149, 38%, 20%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(149, 17%, 33%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(150, 12%, 94%);
+  --muted-foreground: hsl(149, 20%, 25%);
+  --accent: hsl(140, 27%, 52%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(150, 8%, 85%);
+  --input: hsl(150, 10%, 95%);
+  --ring: hsl(149, 38%, 20%);
+  --chart-1: hsl(149, 38%, 20%);
+  --chart-2: hsl(140, 27%, 52%);
+  --chart-3: hsl(156, 100%, 36%);
+  --chart-4: hsl(149, 17%, 33%);
+  --chart-5: hsl(145, 35%, 75%);
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(149, 25%, 15%);
+  --sidebar-primary: hsl(149, 38%, 20%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(150, 12%, 94%);
+  --sidebar-accent-foreground: hsl(149, 38%, 20%);
+  --sidebar-border: hsl(149, 15%, 85%);
+  --sidebar-ring: hsl(149, 38%, 20%);
+  --font-sans: 'Libre Baskerville', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-elegant: 'EB Garamond', serif;
+  --font-mono: 'Menlo', monospace;
+  --radius: 0.5rem;
+  
+  /* Grounded Journal Colors */
+  --primary-green: #264d3b;           /* Darker grounding green */
+  --secondary-green: #6c8f7d;         /* Softer sage green */
+  --background: #f8f7f4;              /* Light parchment background */
+  --accent: #d9c7a6;                  /* Warm tan for contrast */
+  --text-color: #2e2e2e;              /* Gentle charcoal text */
+  
+  /* Legacy color mappings for compatibility */
+  --forest: #264d3b;
+  --emerald: #6c8f7d;
+  --sage: #6c8f7d;
+  --mint: #6c8f7d;
+  --cream: #f8f7f4;
+  --warmwhite: #ffffff;
+  --softwhite: #ffffff;
+  --charcoal: #2e2e2e;
+  --stone: #d9c7a6;
+  --pearl: #f8f7f4;
+}
+
+.dark {
+  --background: hsl(149, 38%, 8%);
+  --foreground: hsl(47, 100%, 98%);
+  --card: hsl(149, 38%, 10%);
+  --card-foreground: hsl(47, 100%, 95%);
+  --popover: hsl(149, 38%, 8%);
+  --popover-foreground: hsl(47, 100%, 98%);
+  --primary: hsl(145, 35%, 75%);
+  --primary-foreground: hsl(149, 38%, 8%);
+  --secondary: hsl(140, 27%, 52%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(149, 38%, 12%);
+  --muted-foreground: hsl(145, 35%, 75%);
+  --accent: hsl(140, 27%, 52%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(149, 38%, 15%);
+  --input: hsl(149, 38%, 12%);
+  --ring: hsl(145, 35%, 75%);
+  --chart-1: hsl(145, 35%, 75%);
+  --chart-2: hsl(140, 27%, 52%);
+  --chart-3: hsl(156, 100%, 36%);
+  --chart-4: hsl(149, 17%, 33%);
+  --chart-5: hsl(149, 38%, 20%);
+  --sidebar: hsl(149, 38%, 10%);
+  --sidebar-foreground: hsl(47, 100%, 95%);
+  --sidebar-primary: hsl(145, 35%, 75%);
+  --sidebar-primary-foreground: hsl(149, 38%, 8%);
+  --sidebar-accent: hsl(149, 38%, 12%);
+  --sidebar-accent-foreground: hsl(145, 35%, 75%);
+  --sidebar-border: hsl(149, 38%, 15%);
+  --sidebar-ring: hsl(145, 35%, 75%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text-color);
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    @apply antialiased;
+  }
+
+  /* Consistent Typography - Georgia for classic journal vibe */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-green);
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+  }
+
+  p, span, div, button, input, textarea, label {
+    font-family: 'Georgia', serif;
+  }
+
+  .font-crimson {
+    font-family: 'Georgia', serif;
+  }
+
+  .font-inter {
+    font-family: 'Georgia', serif;
+  }
+
+  /* Mobile improvements */
+  @media (max-width: 640px) {
+    .journal-page {
+      @apply p-2 mx-1;
+      width: 100% !important;
+      max-width: 100vw !important;
+      overflow-x: hidden !important;
+    }
+    
+    .max-w-5xl {
+      @apply px-2 mx-1;
+      max-width: calc(100vw - 16px) !important;
+      width: 100% !important;
+    }
+    
+    .max-w-6xl {
+      @apply px-2 mx-1;
+      max-width: calc(100vw - 16px) !important;
+      width: 100% !important;
+    }
+    
+    .max-w-4xl {
+      @apply px-2 mx-1;
+      max-width: calc(100vw - 16px) !important;
+      width: 100% !important;
+    }
+    
+    .max-w-3xl {
+      @apply px-2 mx-1;
+      max-width: calc(100vw - 16px) !important;
+      width: 100% !important;
+    }
+    
+    /* Fix grid layouts on mobile */
+    .grid {
+      display: block !important;
+    }
+    
+    .grid > * {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Fix text overflow */
+    h1, h2, h3 {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      font-size: clamp(1.25rem, 4vw, 2rem) !important;
+    }
+    
+    /* Fix date navigation buttons */
+    .flex.space-x-2 {
+      flex-shrink: 0;
+    }
+    
+    /* Better touch targets */
+    button, [role="button"], input, textarea {
+      min-height: 48px;
+    }
+    
+    /* iOS Safari fixes */
+    * {
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Fix iOS Safari viewport issues */
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Prevent iOS zoom on input focus */
+    input, textarea, select {
+      font-size: 16px !important;
+    }
+    
+    /* Fix button spacing on mobile */
+    .space-x-2 > * + * {
+      margin-left: 0.25rem !important;
+    }
+    
+    /* Ensure modals fit on small screens */
+    .max-w-2xl {
+      max-width: calc(100vw - 16px) !important;
+    }
+    
+    .max-w-lg {
+      max-width: calc(100vw - 16px) !important;
+    }
+    
+    /* Better spacing for mobile cards */
+    .p-6 {
+      padding: 1rem !important;
+    }
+    
+    .p-8 {
+      padding: 1.25rem !important;
+    }
+    
+    /* Fix button and input spacing */
+    .space-x-3 > * + * {
+      margin-left: 0.5rem !important;
+    }
+    
+    .space-y-6 > * + * {
+      margin-top: 1rem !important;
+    }
+    
+    /* Responsive text areas */
+    textarea {
+      font-size: 16px !important;
+      width: 100% !important;
+    }
+    
+    /* Fix modal widths */
+    .w-72 {
+      width: calc(100vw - 32px) !important;
+      max-width: 18rem;
+    }
+    
+    /* Fix welcome page layout */
+    .text-4xl {
+      font-size: clamp(1.5rem, 5vw, 2.25rem) !important;
+    }
+    
+    .text-xl {
+      font-size: clamp(1rem, 4vw, 1.25rem) !important;
+    }
+    
+    /* Prevent horizontal scroll */
+    .max-w-2xl, .max-w-4xl {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    
+    /* Improved text readability */
+    .text-3xl {
+      @apply text-xl;
+    }
+    
+    .text-xl {
+      @apply text-lg;
+    }
+    
+    .text-lg {
+      @apply text-base;
+    }
+  }
+
+  /* Tablet improvements */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .journal-page {
+      @apply p-8 mx-4;
+    }
+    
+    .max-w-5xl {
+      @apply px-6;
+    }
+    
+    /* Tablet-optimized touch targets */
+    button, [role="button"], input, textarea {
+      min-height: 44px;
+    }
+    
+    /* Tablet text scaling */
+    .text-3xl {
+      @apply text-2xl;
+    }
+  }
+}
+
+@layer utilities {
+  .font-elegant {
+    font-family: var(--font-elegant);
+  }
+  
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  /* Professional Shadows */
+  .shadow-soft {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-medium {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .shadow-deep {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Journal Cards */
+  .card-elevated {
+    background-color: #fff;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-elevated:hover {
+    @apply shadow-deep;
+    transform: translateY(-2px);
+  }
+
+  /* Subtle Translucent Buttons */
+  .btn-primary, button, .add-task-btn {
+    background-color: rgba(108, 143, 125, 0.7);
+    color: white;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-weight: 400;
+    font-size: 0.875rem;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid rgba(108, 143, 125, 0.4);
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover, button:hover, .add-task-btn:hover {
+    background-color: rgba(38, 77, 59, 0.8);
+    border-color: rgba(38, 77, 59, 0.6);
+  }
+  
+  .btn-primary:focus, button:focus, .add-task-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(108, 143, 125, 0.3);
+  }
+
+  /* Warm, Comfortable Inputs */
+  .input-elevated {
+    @apply focus:border-forest;
+    background: hsl(45, 20%, 98%); /* Gentle warm white */
+    border: 1px solid hsl(45, 20%, 85%);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .input-elevated:focus {
+    box-shadow: 0 0 0 2px rgba(var(--forest), 0.2);
+  }
+
+  /* Links and Accent Colors */
+  a, .link {
+    color: var(--secondary-green);
+  }
+  
+  a:hover, .link:hover {
+    color: var(--primary-green);
+  }
+
+  /* Responsive utilities for device adaptability */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Smooth device transitions */
+  .device-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Enhanced touch targets for tablet/mobile */
+  .touch-target-enhanced {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  @media (max-width: 640px) {
+    .touch-target-enhanced {
+      min-height: 48px;
+      min-width: 48px;
+    }
+  }
+
+  /* Journal log mobile optimizations */
+  @media (max-width: 640px) {
+    .journal-entry-card {
+      margin: 0.5rem;
+      padding: 1rem;
+    }
+    
+    .journal-entry-title {
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+    
+    .journal-entry-content {
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+    
+    .journal-entry-details {
+      padding: 0.75rem;
+      margin-top: 0.75rem;
+    }
+  }
+
+  /* Smooth expansion animations */
+  .expandable-content {
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    overflow: hidden;
+  }
+
+  /* Elegant Page Transitions */
+  .page-enter {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .page-exit {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  .page-exit-active {
+    opacity: 0;
+    transform: translateY(-20px) scale(1.02);
+    transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  
+  /* Success animations */
+  .task-complete-pulse {
+    animation: completePulse 0.6s ease-out;
+  }
+  
+  @keyframes completePulse {
+    0% { 
+      transform: scale(1); 
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    70% { 
+      transform: scale(1.05); 
+      box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+    100% { 
+      transform: scale(1); 
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+  }
+  
+  /* Gentle hover effects */
+  .gentle-hover {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .gentle-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+  .page-shadow {
+    box-shadow: 
+      0 8px 24px rgba(27, 67, 50, 0.08),
+      0 4px 12px rgba(27, 67, 50, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .page-shadow:hover {
+    box-shadow: 
+      0 12px 32px rgba(27, 67, 50, 0.12),
+      0 6px 16px rgba(27, 67, 50, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  .book-binding {
+    background: linear-gradient(90deg, 
+      rgba(27, 67, 50, 0.1) 0%, 
+      rgba(27, 67, 50, 0.05) 50%, 
+      transparent 100%);
+  }
+  
+  .text-forest {
+    color: var(--forest);
+  }
+  
+  .text-emerald {
+    color: var(--emerald);
+  }
+  
+  .text-sage {
+    color: var(--sage);
+  }
+  
+  .text-mint {
+    color: var(--mint);
+  }
+  
+  .text-cream {
+    color: var(--cream);
+  }
+  
+  .text-warmwhite {
+    color: var(--warmwhite);
+  }
+  
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+  
+  .bg-forest {
+    background-color: var(--forest);
+  }
+  
+  .bg-emerald {
+    background-color: var(--emerald);
+  }
+  
+  .bg-sage {
+    background-color: var(--sage);
+  }
+  
+  .bg-mint {
+    background-color: var(--mint);
+  }
+  
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  
+  .bg-warmwhite {
+    background-color: var(--warmwhite);
+  }
+  
+  .bg-softwhite {
+    background-color: var(--softwhite);
+  }
+  
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+  
+  .border-forest {
+    border-color: var(--forest);
+  }
+  
+  .border-emerald {
+    border-color: var(--emerald);
+  }
+  
+  .border-sage {
+    border-color: var(--sage);
+  }
+  
+  .border-mint {
+    border-color: var(--mint);
+  }
+  
+  
+  .journal-texture {
+    background-image: 
+      linear-gradient(90deg, rgba(254, 250, 224, 0.04) 1px, transparent 1px),
+      linear-gradient(rgba(254, 250, 224, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px, 24px 24px;
+    position: relative;
+  }
+  
+  .journal-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(254, 250, 224, 0.03) 50%, transparent 100%);
+    pointer-events: none;
+  }
+  
+  .chapter-transition {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+  
+  .chapter-transition.fade-out {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  
+  .chapter-transition.fade-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  .fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+    transition: all 0.2s ease-in;
+  }
+  
+  .grow-animation {
+    animation: grow 2s ease-in-out infinite;
+  }
+  
+  .journal-binding {
+    background: linear-gradient(90deg, 
+      hsl(149, 38%, 18%) 0%, 
+      hsl(149, 38%, 25%) 20%, 
+      hsl(149, 38%, 30%) 40%, 
+      hsl(149, 38%, 25%) 60%, 
+      hsl(149, 38%, 20%) 80%, 
+      hsl(149, 38%, 18%) 100%);
+    box-shadow: 
+      inset 0 0 25px rgba(0, 0, 0, 0.3),
+      inset 3px 0 8px rgba(0, 0, 0, 0.2),
+      0 0 15px rgba(27, 67, 50, 0.3);
+  }
+}
+
+
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.98); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+@keyframes grow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
